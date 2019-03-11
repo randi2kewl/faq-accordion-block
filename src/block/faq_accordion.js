@@ -6,7 +6,6 @@ const __ = wp.i18n.__;
 var el = wp.element.createElement,
     registerBlockType = wp.blocks.registerBlockType;
 
-const { TextControl } = wp.components;
 const { RichText } = wp.editor;
 
 registerBlockType('fab/faq-accordion-block', {
