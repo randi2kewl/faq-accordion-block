@@ -1,0 +1,13 @@
+.faq-accordion .faq-accordion-question {
+  cursor: pointer; }
+  .faq-accordion .faq-accordion-question:after {
+    content: ' +'; }
+
+.faq-accordion.open .faq-accordion-question:after {
+  content: ' -'; }
+
+.faq-accordion .faq-accordion-answer {
+  display: none; }
+
+.faq-accordion.open .faq-accordion-answer {
+  display: block; }
