@@ -1,16 +1,1 @@
-.faq-accordion .faq-accordion-question {
-  cursor: pointer; }
-  .faq-accordion .faq-accordion-question:after {
-    content: '+';
-    font-size: 1.75rem;
-    vertical-align: middle;
-    padding-left: 10px; }
-
-.faq-accordion.open .faq-accordion-question:after {
-  content: '-'; }
-
-.faq-accordion .faq-accordion-answer {
-  display: none; }
-
-.faq-accordion.open .faq-accordion-answer {
-  display: block; }
+.faq-accordion .faq-accordion-question{cursor:pointer}.faq-accordion .faq-accordion-question:after{content:'+';font-size:1.75rem;vertical-align:middle;padding-left:10px}.faq-accordion.open .faq-accordion-question:after{content:'-'}.faq-accordion .faq-accordion-answer{display:none;padding-left:40px}.faq-accordion.open .faq-accordion-answer{display:block}
