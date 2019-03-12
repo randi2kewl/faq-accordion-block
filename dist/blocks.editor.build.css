@@ -2,4 +2,4 @@
   content: none; }
 
 .wp-admin .faq-accordion .faq-accordion-answer {
-  display: block; }
+  display: block !important; }

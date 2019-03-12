@@ -4,9 +4,8 @@ import "./editor.scss";
 const __ = wp.i18n.__;
 
 var el = wp.element.createElement,
-    registerBlockType = wp.blocks.registerBlockType;
-
-const { RichText } = wp.editor;
+    registerBlockType = wp.blocks.registerBlockType,
+    RichText = wp.editor.RichText;
 
 registerBlockType('fab/faq-accordion-block', {
     title: __('FAQ Accordion'),
@@ -29,9 +28,9 @@ registerBlockType('fab/faq-accordion-block', {
             selector: 'h3'
         },
         answer: {
-            type: 'html',
-            source: 'html',
-            selector: 'p'
+            type: 'array',
+            source: 'children',
+            selector: '.faq-accordion-answer'
         }
     },
 
@@ -54,18 +53,18 @@ registerBlockType('fab/faq-accordion-block', {
                     }
                 )
             ),
-            el('p',
-                { className: 'faq-accordion-answer' },
-                el(
-                    RichText,
-                    {
-                        placeholder: 'Enter an answer.',
-                        value: props.attributes.answer,
-                        onChange: (val) => {
-                            props.setAttributes({ answer: val });
-                        }
+            el(
+                RichText,
+                {
+                    key: 'editable',
+                    tagName: 'div',
+                    className: 'faq-accordion-answer',
+                    placeholder: 'Enter an answer.',
+                    value: props.attributes.answer,
+                    onChange: (val) => {
+                        props.setAttributes({ answer: val });
                     }
-                )
+                }
             ),
         );
     },
@@ -77,7 +76,13 @@ registerBlockType('fab/faq-accordion-block', {
             el('h3', {
                 className: 'faq-accordion-question',
             }, props.attributes.question),
-            el('p', { className: 'faq-accordion-answer' }, props.attributes.answer),
+            el(
+                RichText.Content, {
+                    tagName: 'div',
+                    className: 'faq-accordion-answer',
+                    value: props.attributes.answer
+                }
+            )
         );
     },
 });

@@ -35,7 +35,7 @@ function fab_editor_assets() {
 	wp_enqueue_script(
 		'faq-block-js',
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components'),
 		true 
 	);
 

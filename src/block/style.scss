@@ -2,10 +2,15 @@
     .faq-accordion-question { 
         cursor: pointer; 
 
-        &:after { content: ' +'; }
+        &:after { 
+            content: '+';
+            font-size: 1.75rem;
+            vertical-align: middle;
+            padding-left: 10px;
+        }
     }
     
-    &.open .faq-accordion-question:after { content: ' -'; }
+    &.open .faq-accordion-question:after { content: '-'; }
     .faq-accordion-answer { display: none; }
     &.open .faq-accordion-answer { display: block; }
 }
