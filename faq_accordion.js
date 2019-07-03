@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleAccordion = event => {
+    var toggleAccordion = function(event) {
         event.target.parentNode.classList.toggle('open');
     };
-    document.addEventListener('click', toggleAccordion, true);
+
+
+    var accordions = document.getElementsByClassName('faq-accordion');
+    for( var i = 0; i < accordions.length; i++ ) {
+        accordions[i].addEventListener('click', toggleAccordion, true);
+    }
+
 });
